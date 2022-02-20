@@ -1,0 +1,202 @@
+#display-cart-main{
+    .title-empty{
+        font-size: 24px;
+    }
+    main{
+        #cart{
+            table{
+                width: 100%;
+                border-collapse: collapse;
+                border-spacing: 0;
+                @media screen and (max-width: 749px){
+                    .__hide-content {
+                        display: none !important;
+                    }
+                }
+                .cart-header{
+                    th{
+                        padding: 27px 22px;
+                        font-weight: 400;
+                        &:nth-of-type(1){
+                            padding-left: 0;
+                        }
+                        &:nth-of-type(4){
+                            padding-right: 0;
+                        }
+                    }
+                }
+                .cart-body{
+                    div.amount-input{
+                        input[type="number"].amount-input-item{
+                            padding: 10px;
+                            width: 60px;
+                            font-size: 14px;
+                            /* Chrome, Safari, Edge, Opera */
+                            &::-webkit-outer-spin-button,
+                            &::-webkit-inner-spin-button {
+                                -webkit-appearance: none;
+                                margin: 0;
+                            }
+                            /* Firefox */
+                            &{
+                                -moz-appearance: textfield;
+                            }
+                        }
+                    }
+                    tr{
+                        td{
+                            padding-top: 22px;
+                            padding-bottom: 22px;
+                            &.cart-image{
+                                width: 130px;
+                                a{
+                                    position: relative;
+                                    img{
+                                        max-height: 92px;
+                                        max-width: 100%;
+                                        border: 0;
+                                    }
+                                    border-bottom: 1px solid transparent;
+                                    &:hover{
+                                        border-bottom: 1px solid black;
+                                    }
+                                }
+                                padding-right: 15px;
+                                
+                            }
+                            &.cart-info{
+                                max-width: 300px;
+                                padding-left: 22px;
+                                padding-right: 22px;
+                                > div{
+                                    min-width: 100px;
+                                    &.cart-title{
+                                        a{
+                                            padding: 0;
+                                            color: #3d4246;
+                                            font-size: 14px;
+                                            &:hover{
+                                                text-decoration: underline;
+                                            }
+                                        }
+                                        padding-bottom: 5px;
+                                    }
+                                    &#cart-option{
+                                        padding: 8px 0;
+                                        .cart-size{
+                                            font-size: 11px;
+                                            font-style: italic;
+                                        }
+                                        .cart-color{
+                                            height: 10px;
+                                            width: 25px;
+                                            border-radius: 5px;
+                                            margin-left: 10px;
+                                        }
+                                    }
+                                }
+                            }
+                            &.cart-price{
+                                padding-right: 30px;
+                                a.edit{
+                                    display: none;
+                                }
+                            }
+                        }
+                    }
+                    @media screen and(max-width: 500px) {
+                        &{
+                            td{
+                                &.cart-info{
+                                    .cart-title{
+                                        a{
+                                            font-size: 12px !important;
+                                        }
+                                    }
+                                    padding-right: 0 !important;
+                                }
+                            }
+                        }
+                    }
+                    @media screen and (max-width: 749px){
+                        &{
+                            tr{
+                                &:not(.--update-tool) + tr.update-item-tool{
+                                    display: none;
+                                }
+                                &.--update-tool{
+                                    td{
+                                        &.cart-price{
+                                            a.edit{
+                                                display: none;
+                                            }
+                                            a.cancel{
+                                                display: inline;
+                                            }
+                                        }
+                                    }
+                                }
+                                td{
+                                    &.cart-image{
+                                        width: 25%;
+                                        padding-right: 0;
+                                        min-width: 40px;
+                                    }
+                                    &.cart-price{
+                                        width: 20%;
+                                        padding: 0;
+                                        .price{
+                                            margin-bottom: 20px;
+                                        }
+                                        a.edit{
+                                            display: inline;
+                                        }
+                                        a.cancel{
+                                            display: none;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        
+                    }
+                    @media screen and (min-width: 749px){
+                        &{
+                            .__hide-content-big{
+                                display: none;;
+                            }
+                            .cart-price{
+                                .edit-btn{
+                                    display: none;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            .subtotal-cart{
+                @media screen and (max-width: 749px){
+                    &{
+                        > div{
+                            align-items: center !important;
+                        }
+                    }
+                }
+                .subtotal-log{
+                    .taxes{
+                        font-size: 12px;
+                    }
+                    border-radius: 100px;
+                    padding: 20px 35px;
+                    box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 8px;
+                }
+                #continue-payment{
+                    a{
+                        padding: 10px;
+                        font-size: 18px;
+                    }
+                }
+            }
+        }
+    }
+}

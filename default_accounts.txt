@@ -1,0 +1,10 @@
+There are predefined accounts in the DB:
+
+    As a customer in profile: 
+        email: email@gmail.com
+        password: 1
+
+
+    As a employer in backend website
+        id: 1
+        password: 2

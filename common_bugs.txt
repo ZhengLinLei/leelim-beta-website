@@ -1,0 +1,5 @@
+1. MySQL import bug
+
+    -------- How to fix it?
+    
+    Check if the connection has been created with utf8_general_ci encoding

@@ -1,0 +1,156 @@
+body{
+    .stroke-text{
+        color: transparent;
+        -webkit-text-stroke-width: 1px;
+        transition: .3s;
+        -webkit-text-stroke-color: black;
+        font-weight: bold;
+    }
+    .order-card{
+        position: relative;
+        width: 90vw;
+        max-width: 700px;
+        margin: 50px 0;
+        transition: .3s ease all;
+        transform: rotateY(0deg);
+        transform-style: preserve-3d;
+        &.active{
+            transform: rotateY(180deg);
+        }
+        &:hover{
+            box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 5px;
+        }
+        border: 1px solid #f5f5f5;
+        border-radius: 5px;
+        .barcode{
+            font-family: 'Libre Barcode 39', cursive;
+            font-size: 21px;
+            transform: scaleY(2);
+        }
+        .front{
+            width: 100%;
+            padding: 25px;
+            backface-visibility: hidden;
+            .water-mark-box{
+                position: absolute;
+                left: 0;
+                bottom: 0;
+                height: 120px;
+                width: 200px;
+                overflow: hidden;
+                .water-mark{
+                    position: absolute;
+                    color: white;
+                    bottom: 0;
+                    left: 0;
+                    font-weight: 700;
+                    letter-spacing: 2px;
+                    background: black;
+                    transition: 0;
+                    padding: 3px 30px;
+                    font-size: 21px;
+                    transform: rotate(45deg) translate(-25%, 50%);
+                }
+            }
+            .content{
+                display: flex;
+                grid-gap: 20px;
+                .info{
+                    width: 100%;
+                    .text{
+                        flex-direction: column;
+                        > div > div{
+                            margin: 10px 0;
+                            div.label{
+                                font-size: 12px;
+                                color: var(--muted-color);
+                                margin-bottom: 10px;
+                            }
+                            > div.data{
+                                margin-left: 10px;
+                                &.order-code{
+                                    cursor: pointer;
+                                    position: relative;
+                                    display: flex;
+                                    align-items: center;
+                                }
+                            }
+                        }
+                    }
+                }
+                .qr{
+                    border-right: 1px dashed #f5f5f5;
+                    padding: 0px 50px 10px 0px;
+                    margin-right: 50px;
+                }
+            }
+        }
+        .back{
+            position: absolute;
+            top: 0;
+            left: 0;
+            background: white;
+            width: 100%;
+            height: 100%;
+            transform: rotateY(180deg);
+            backface-visibility: hidden;
+            .content{
+                position: absolute;
+                bottom: 40px;
+                left: 50%;
+                transform: translateX(-50%);
+                h3{
+                    font-weight: 500;
+                    margin-bottom: 100px;
+                }
+            }
+        }
+        @media screen and (max-width: 700px){
+            padding: 35px 10px;
+            .front{
+                .content{
+                    flex-direction: column;
+                    .info{
+                        margin: 10px 0;
+                        .text{
+                            flex-direction: row;
+                            justify-content: space-around;
+                            div.label{
+                                font-size: 10px;
+                            }
+                            div.data{
+                                font-size: 12px;
+                                margin-left: 3px !important;
+                                font-weight: 500;
+                            }
+                        }
+                        .barcode-section{
+                            margin: 30px;
+                        }
+                    }
+                    .qr{
+                        padding: 0 0 50px 0;
+                        margin: 0 10px;
+                        text-align: center;
+                        border: none;
+                        border-bottom: 1px dashed #f5f5f5;
+                    }
+                }
+            }
+        }
+        @media screen and (min-width: 700px){
+            .front{
+                .content{
+                    .info{
+                        .barcode-section{
+                            position: absolute;
+                            transform: rotate(90deg) translateY(-50%);
+                            top: 50%;
+                            right: 25px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

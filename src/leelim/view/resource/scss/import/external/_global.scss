@@ -1,0 +1,237 @@
+html, body{
+  scroll-behavior: smooth;
+}
+//GRID
+.item-product-grid {
+  main {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    @media screen and (min-width: 600px) {
+      & {
+        grid-template-columns: repeat(3, 33.33%);
+      }
+    }
+    @media screen and (min-width: 960px) {
+      & {
+        grid-template-columns: repeat(4, 25%);
+      }
+    }
+    > a {
+      padding: 2.5px;
+      display: block;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      div.img {
+        img {
+          width: 100%;
+          height: auto;
+          &.hover {
+            display: none;
+            position: absolute;
+            border-bottom: 1px solid black;
+          }
+        }
+      }
+      div.info {
+        padding: 15px;
+        .tag {
+          .tic-c {
+            background-color: #f5f5f5;
+            width: fit-content;
+            padding: 5px 15px;
+            border-radius: 100px;
+            color: var(--muted-color);
+            font-size: 10px;
+          }
+        }
+        .title,
+        .price {
+          padding: 10px 0;
+          font-size: 12px;
+        }
+      }
+      &:hover {
+        div.img {
+          img {
+            &.active {
+              display: none;
+              position: absolute;
+            }
+            &.hover {
+              display: block;
+              position: relative;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+.item-product-grid, .photo-gallery-grid{
+  footer {
+    margin: 100px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .indi {
+      font-size: 18px;
+      .tt {
+        margin: 0 5px;
+        &:hover{
+            text-decoration: underline;
+        }
+        @media screen and (max-width: 600px) {
+          & {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}
+.photo-gallery-grid{
+  main{
+    display: grid;
+    grid-template-columns: 1fr;
+    @media screen and (min-width: 800px) {
+      & {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+    @media screen and (min-width: 1060px) {
+      & {
+        grid-template-columns: repeat(3, 33.33%);
+      }
+    }
+    > a {
+      padding: 30px;
+      display: block;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      div.img {
+        img {
+          &:hover{
+            filter: contrast(.8);
+          }
+          width: 100%;
+          height: auto;
+        }
+      }
+      div.info {
+        padding: 15px;
+        font-size: 21px;
+      }
+    }
+  }
+}
+.btn{
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+  &.btn-big{
+    font-size: 18px;
+    padding: 10px;
+  }
+  font-size: 12px;
+  padding: 5px;
+  position: relative;
+  &:hover{
+      color: white;
+      &::after{
+          height: 100%;
+      }
+  }
+  &::after{
+      z-index: -1;
+      content: '';
+      transition: .3s;
+      position: absolute;
+      width: 100%;
+      bottom: 0;
+      left: 0;
+      height: 1px;
+      background-color: black;
+  }
+}
+.link{
+  text-decoration: underline;
+  &:hover{
+    color: white;
+    background-color: black;
+  }
+}
+.link-hover{
+  &:hover{
+    text-decoration: underline;
+  }
+}
+.check-box-ui{
+  display: block;
+  cursor: pointer;
+  width: 35px;
+  position: relative;
+  height: 10px;
+  border-radius: 100px;
+  background-color: #f5f5f5;
+  &::after{
+    content: "";
+    border-radius: 100%;
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    background-color: white;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, .4);
+  }
+  &[value="true"]::after{
+    content: "";
+    background-color: #0a5;
+    left: calc(100% - 15px);
+  }
+}
+/*LOAD CONTENT SECTION*/
+#load-content-section{
+  display: none;
+  &.active{
+      display: flex;
+  }
+  width: 100vw;
+  height: 100vh;
+  z-index: 9999;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, .4);
+  @keyframes loader {
+      to{
+          transform: rotate(350deg);
+      }
+  }
+  .loader-spin{
+      width: 60px;
+      height: 60px;
+      border: 5px solid white;
+      border-radius: 100%;
+      border-bottom: 5px solid transparent;
+      animation: loader .8s ease infinite;
+  }
+}
+//WALLET
+#wallet-main{
+  padding: 80px 0;
+  #number{
+      display: flex;
+      align-items: flex-start;
+      font-size: 18px;
+      #money{
+          font-size: 32px;
+          margin-left: 5px;
+      }
+  }
+}

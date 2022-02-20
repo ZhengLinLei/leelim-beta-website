@@ -1,0 +1,63 @@
+main#account-main{
+    #account-info{
+        #close-account-session{
+            font-size: 14px;
+            text-align: center;
+        }
+        > main{
+            padding: 80px 0;
+            display: grid;
+            grid-gap: 5px;
+            grid-template-columns: repeat(4, 1fr);
+            > a{
+                border: 1px solid #f5f5f5;
+                padding: 15px;
+                text-align: center;
+            }
+        }
+    }
+    @media screen and (max-width: 1200px){
+        &{
+            #account-info{
+                main{
+                    grid-template-columns: repeat(3, 1fr);
+                    grid-gap: 5px;
+                }
+            }
+        }
+    }
+    @media screen and (max-width: 960px){
+        & > div{
+            #account-info{
+                > header{
+                    flex-direction: column !important;
+                    .welcome{
+                        justify-content: center;
+                    }
+                    #close-account-session{
+                        margin-top: 10px;
+                    }
+                }
+            }
+        }
+    }
+    @media screen and (max-width: 610px){
+        &{
+            #account-info{
+                main{
+                    grid-template-columns: 1fr 1fr;
+                }
+            }
+        }
+    }
+    @media screen and (max-width: 440px){
+        &{
+            #account-info{
+                main{
+                    grid-template-columns: 1fr;
+                    grid-gap: 10px;
+                }
+            }
+        }
+    }
+}

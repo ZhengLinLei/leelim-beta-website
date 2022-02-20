@@ -1,0 +1,161 @@
+body{
+    // -----------------------
+    .tooltips{
+        position: relative;
+        a{
+            &:hover + .content{
+                display: block;
+            }
+        }
+        .content{
+            position: absolute;
+            display: none;
+            padding: 20px;
+            border-radius: 5px;
+            background-color: white;
+            left: 50%;
+            width: 40vw;
+            max-width: 200px;
+            transform: translate(-50%, 15%);
+            box-shadow: rgba(0, 0, 0, .04) 0px 3px 8px;
+        }
+    }
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+    input[type=number] {
+        -moz-appearance: textfield;
+    }
+    .wrong:not(input){
+        color: #e32b2b;
+    }
+    input{
+        &:focus{
+            outline: none;
+        }
+        font-size: 14px;
+        width: 90vw;
+        max-width: 350px;
+        display: block;
+        padding: 15px;
+        border: 1px solid black;
+        border-radius: 5px;
+        position: relative;
+        &.wrong, &.correct{
+            border-radius: 5px 5px 0 0;
+        }
+        &.wrong{
+            border-bottom: 1px solid #e32b2b;
+            box-shadow: 0 1px 0 0 #e32b2b;
+        }
+        &.correct{
+            border-bottom: 1px solid #0a5;
+            box-shadow: 0 1px 0 0 #0a5;
+        }
+    }
+    form{
+        width: 90vw;
+        max-width: 350px;
+    }
+    div.input-group{
+        display: flex;
+        padding: 10px 0;
+        input{
+            width: 100%;
+        }
+        #hide-password{
+            width: 60px;
+            border: 1px solid black;
+            border-radius: 5px;
+            margin-left: 10px;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 18px;
+            transition: .3s;
+            &:hover{
+                color: white;
+                background-color: black;
+            }
+            #hide{
+                display: none;
+            }
+            &.hide{
+                #hide{
+                    display: block;
+                }
+                #show{
+                    display: none;
+                }
+            }
+        }
+    }
+    div.birthday{
+        position: relative;
+        > div.inputs{
+            display: grid;
+            grid-template-columns: repeat(3, 33.33%);
+            grid-gap: 5px;
+            width: calc(100% - 10px);
+            input{
+                width: auto;
+            }
+        }
+    }
+    div.consent-form{
+        ul{
+            li{
+                margin: 10px 0;
+                position: relative;
+                display: flex;
+                > *{
+                    cursor: pointer;
+                }
+                input[type="checkbox"]{
+                    width: auto !important;
+                    margin: 5px 20px 0 0;
+                    border-radius: 0;
+                    position: relative;
+                    opacity: 0;
+                    z-index: 99;
+                }
+                label{
+                    cursor: pointer !important;
+                }
+                input[type="checkbox"]:checked+.icon-box .icon {
+                    opacity: 1;
+                }
+                .icon-box{
+                    border: 1px solid black;
+                    border-radius: 3px;
+                    width: 20px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    height: 20px;
+                    position: absolute;
+                    left: 0;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    .icon{
+                        opacity: 0;
+                    }
+                }
+            }
+        }
+    }
+     input{
+        width: 90vw;
+        border: 1px solid black;
+        border-radius: 5px;
+    }
+    footer#recovery-password{
+        width: 100%;
+        bottom: 0;
+        left: 0;
+        background-color: white;
+    }
+}

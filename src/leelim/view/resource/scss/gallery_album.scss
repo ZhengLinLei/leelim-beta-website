@@ -1,0 +1,32 @@
+body{
+    .photo-gallery-grid{
+        main{
+            a{
+                &:hover{
+                    div.img{
+                        .inner-title{
+                            opacity: 1;
+                        }
+                    }
+                }
+                div.img{
+                    position: relative;
+                    .inner-title{
+                        top: 0;
+                        left: 0;
+                        position: absolute;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        width: 100%;
+                        opacity: 0;
+                        transition: .3s;
+                        height: 100%;
+                        background-color: rgba(0,0,0,0.3);
+                        color: white;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,39 @@
+body{
+    .grid-index{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 10px;
+        > div{
+            padding: 10px;
+            text-align: center;
+            ul{
+                margin-top: 40px;
+                grid-gap: 20px;
+                grid-template-columns: 1fr;
+                display: grid;
+                li{
+                    border: 1px solid #f5f5f5;
+                    padding: 30px 20px;
+                    display: -ms-grid;
+                    display: grid;
+                    grid-template-columns: 1fr 1fr 1fr;
+                    width: 100%;
+                    .stroke-text{
+                        color: transparent;
+                        -webkit-text-stroke-width: 1px;
+                        transition: .3s;
+                        -webkit-text-stroke-color: black;
+                        font-weight: bold;
+                        font-size: 4vh;
+                    }
+                    a{
+                        text-decoration: underline;
+                    }
+                }
+            }
+        }
+        @media screen and (max-width: 700px){
+            grid-template-columns: 1fr;
+        }
+    }
+}

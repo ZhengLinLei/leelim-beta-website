@@ -1,0 +1,19 @@
+footer#global-footer{
+    padding: 100px 0;
+    .info{
+        display: flex;
+        a{
+            margin: 5px;
+            font-size: 12px;
+            &:hover{
+                text-decoration: underline;
+            }
+        }
+        @media screen and (max-width: 600px){
+            &{
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    }
+}

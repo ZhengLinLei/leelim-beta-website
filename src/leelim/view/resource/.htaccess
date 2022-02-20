@@ -1,0 +1,4 @@
+Options -Indexes
+
+#ERROR DOC
+ErrorDocument 404 a

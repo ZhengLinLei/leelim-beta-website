@@ -1,0 +1,52 @@
+@import "import/variables";
+@import "import/font";
+@import "import/space";
+@import "import/align";
+@import "import/border";
+
+/*----------------------*/
+/* EXTERNAL             */
+/*----------------------*/
+@import "import/external/global";
+@import "import/external/header";
+@import "import/external/footer";
+// STATIC STYLES
+ul {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+  color: black;
+  padding: 2px;
+}
+input,
+textarea,
+button,
+select,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+input, select {
+  border: 1px solid #949494;
+  background-color: white;
+  color: black;
+  max-width: 100%;
+  line-height: 1.2;
+  border-radius: 2px;
+}
+select{
+  option{
+    appearance: none;
+    padding: 15px;
+  }
+  appearance: none;
+}
+button{
+  &:focus{
+    outline: none;
+  }
+}
+//ICON REMOVE TITLE
+ion-icon {
+  pointer-events: none;
+}

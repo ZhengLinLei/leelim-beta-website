@@ -1,0 +1,58 @@
+body{
+    height: 100vh;
+    overflow: hidden;
+    .password-warning{
+        background-color: #ede734;
+        display: inline-block;
+        padding: 5px 10px;
+    }
+    > main{
+        main.body{
+            position: relative;
+            &.success{
+                .input{
+                    transform: translateY(100%);
+                    opacity: 0;
+                }
+                .text{
+                    transform: translateY(0);
+                    opacity: 1;
+                    .message{
+                        opacity: 1;
+                        transform: translateY(0);
+                    }
+                }
+            }
+            .input, .text{
+                transition: .9s;
+            }
+            .text{
+                opacity: 0;
+                position: absolute;
+                transform: translateY(200%);
+                top: 0;
+                width: 100%;
+                padding: 20px;
+                font-size: 18px;
+                display: flex;
+                justify-content: center;
+                font-weight: 500;
+                > div{
+                    max-width: 400px;
+                }
+                .message{
+                    opacity: 0;
+                    transition: .8s ease-out;
+                    transition-delay: .4s;
+                    transform: translateY(100px);
+                }
+            }
+        }
+    }
+    #help-recovery-password{
+        width: 100%;
+        bottom: 0;
+        left: 0;
+        background-color: white;
+    }
+}

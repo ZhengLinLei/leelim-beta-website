@@ -1,0 +1,22 @@
+RewriteEngine on
+
+ErrorDocument 404 http://%{HTTP_HOST}/404/
+
+
+RewriteCond %{REQUEST_URI}  !.(php?|html?|jpg|png|jpeg|ico|bmp|gif|js|css|mp4|mp3|map)$
+RewriteRule ^(.*)([^/])$ /$1$2/ [L,R=301]
+
+# STATIC URL 
+RewriteRule ^static/(.*)$ view/resource/$1 [L]
+# API
+RewriteRule ^api/(.*)$ view/api/$1 [L]
+
+#LOGIN
+RewriteRule ^login/$ ?template=login [L]
+
+#HOME
+RewriteRule ^/$ ?template=home [L]
+##TOOLS
+RewriteRule ^(order|shipping|payment|compress_img)/$ ?template=home&heading=tools&page=tools_$1 [QSA,L]
+##OTHER
+RewriteRule ^(email|todo|pending_order|setting|profile|season|product|analytic|contact|404)/$ ?template=home&heading=$1&page=$1 [QSA,L]

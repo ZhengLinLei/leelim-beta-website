@@ -1,0 +1,14 @@
+main#account-main{
+    @media screen and (max-width: 960px){
+        & > div{
+            #wallet{
+                > header{
+                    flex-direction: column !important;
+                    #history{
+                        margin-top: 10px;
+                    }
+                }
+            }
+        }
+    }
+}

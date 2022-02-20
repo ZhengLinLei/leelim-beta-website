@@ -1,0 +1,33 @@
+If you are using XAMPP please config the project Domain as "leelim.test" and backend "backend.leelim.es", if you do not do it, the classic format of domain with "localhost/leelim" will append errors.
+
+To personalizate domains in XAMPP you only need to acces to the "apache\conf\extra" folder and find the "httpd-vhost.conf" file and add in the end this lines of code:
+
+    <VirtualHost *>
+        DocumentRoot "C:\xampp\htdocs\zll\leelim"
+        ServerName leelim.test
+        <Directory "C:\xampp\htdocs\zll\leelim">
+            Options All
+            AllowOverride All
+            Require all granted
+        </Directory>
+    </VirtualHost>
+    <VirtualHost *>
+        DocumentRoot "C:\xampp\htdocs\zll\leelim_backend"
+        ServerName backend.leelim.test
+        <Directory "C:\xampp\htdocs\zll\leelim_backend">
+            Options All
+            AllowOverride All
+            Require all granted
+        </Directory>
+    </VirtualHost>
+
+Change "C:\xampp\htdocs\zll\leelim" and "C:\xampp\htdocs\zll\leelim_backend" to the rute where you have the project.
+
+
+Now go to "C:/Windows/System32/drivers/etc" and find the file "hosts" and add this two line of code:
+
+    127.0.0.1	leelim.test
+    127.0.0.1	backend.leelim.test
+
+
+And you will have all done. Just restart the XAMPP and find "leelim.test" in your browser.

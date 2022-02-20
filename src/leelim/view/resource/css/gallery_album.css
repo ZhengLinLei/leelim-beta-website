@@ -1,0 +1,2 @@
+body .photo-gallery-grid main a:hover div.img .inner-title{opacity:1}body .photo-gallery-grid main a div.img{position:relative}body .photo-gallery-grid main a div.img .inner-title{top:0;left:0;position:absolute;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;width:100%;opacity:0;-webkit-transition:.3s;transition:.3s;height:100%;background-color:rgba(0,0,0,0.3);color:white}
+/*# sourceMappingURL=gallery_album.css.map */

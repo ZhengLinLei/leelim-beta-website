@@ -1,0 +1,63 @@
+RewriteEngine on
+
+#ERROR DOC
+ErrorDocument 404 http://%{HTTP_HOST}/404/
+ErrorDocument 500 http://%{HTTP_HOST}/500/
+ErrorDocument 403 http://%{HTTP_HOST}/403/
+ErrorDocument 401 http://%{HTTP_HOST}/401/
+
+RewriteCond %{REQUEST_URI}  !.(php?|html?|jpg|png|ico|jpeg|bmp|gif|js|css|mp4|mp3|map)$
+RewriteRule ^(.*)([^/])$ /$1$2/ [L,R=301]
+
+# STATIC URL 
+RewriteRule ^static/(.*)$ view/resource/$1 [L]
+
+# API
+RewriteRule ^api/(.*)$ view/api/$1 [L]
+
+# ERROR
+RewriteRule ^(404|500|403|401)/$ ?template=error&error=$1 [L]
+
+# MUJER HOMBRE
+RewriteRule ^(mujer|hombre|unisex)/$ ?template=gender&gender=$1 [L] 
+RewriteRule ^(mujer|hombre|unisex)/(accesorio|ropa|bolso|zapato)/?$ ?template=gender&gender=$1&group=$2 [QSA,L] 
+
+# PRODUCTO
+RewriteRule ^(producto)/(.*)/([a-zA-Z0-9]*)/$ ?template=item&item=$3 [QSA,L]
+
+# GALERIA
+RewriteRule ^(galeria)/$ ?template=gallery [QSA,L] 
+RewriteRule ^(galeria)/([0-9A-Z]*)/?$ ?template=gallery&album=$2 [QSA,L]
+RewriteRule ^(galeria)/([0-9A-Z]*)/([a-zA-Z0-9]*)/?$ ?template=gallery&album=$2&collection=$3 [QSA,L]
+
+# MAS
+RewriteRule ^(otro)/$ ?template=other [L]
+
+# BUSCAR
+RewriteRule ^(busqueda)/$ ?template=search [QSA,L]
+
+# CARRITO
+RewriteRule ^(carrito)/$ ?template=cart&type=display [L]
+RewriteRule ^(carrito)/informacion-del-pedido/$ ?template=cart&type=address [QSA,L]
+RewriteRule ^(carrito)/pagar/$ ?template=cart&type=pay [QSA,L]
+RewriteRule ^(carrito)/pedido-completado/$ ?template=cart&type=success [QSA,L]
+
+# CUENTA
+RewriteRule ^(cuenta)/$ ?template=account&page=home [L]
+
+## CUENTA CONFIG
+RewriteRule ^(cuenta)/((?!(login|register|verify-account|recovery)).*)/$ ?template=account&page=$2 [QSA,L]
+
+# LOGIN
+RewriteRule ^(cuenta)/(login|register|verify-account|recovery)/$ ?template=login&type=$2 [QSA,L]
+
+# INFO
+RewriteRule ^(info)/$ ?template=info&page=index [QSA,L]
+RewriteRule ^(info)/([a-zA-Z\-]*)/$ ?template=info&page=$2 [QSA,L]
+
+# HELP
+RewriteRule ^(ayuda)/$ ?template=help [QSA,L]
+
+# ORDER INFO
+RewriteRule ^pedido/((AN|LL)[A-Z0-9]*)/resumen/$ ?template=order&type=resume&order_code=$1 [QSA,L]
+RewriteRule ^pedido/((AN|LL)[A-Z0-9]*)/estado/$ ?template=order&type=status&order_code=$1 [QSA,L]

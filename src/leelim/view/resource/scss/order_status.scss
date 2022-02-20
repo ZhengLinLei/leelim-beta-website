@@ -1,0 +1,91 @@
+body{
+    .body{
+        overflow: hidden;
+        padding: 40px 0;
+        display: flex;
+        justify-content: center;
+        > div{
+            width: 100vw;
+            max-width: 600px;
+            > header{
+                display: grid;
+                border-bottom: 1px solid #f5f5f5;
+                padding-bottom: 50px;
+                grid-template-columns: repeat(3, 1fr);
+                grid-gap: 30px;
+                > div{
+                    .bar{
+                        width: 100%;
+                        height: 20px;
+                        border-radius: 5px;
+                        background-color: #f5f5f5;
+                        &.success{
+                            background-color: #0a5;
+                        }
+                    }
+                }
+            }
+            > main{
+                margin-top: 100px;
+                padding-bottom: 10px;
+                border-bottom: 1px solid #f5f5f5;
+                .list-style{
+                    padding: 50px 0;
+                    .track-all-list{
+                        margin-left: 80px;
+                        ul{
+                            li{
+                                padding-left: 20px;
+                                border-left: 1px solid #CCC;
+                                padding-bottom: 25px;
+                                i{
+                                    &::before{
+                                        position: absolute;
+                                        height: 8px;
+                                        width: 8px;
+                                        background: #FFF;
+                                        margin: 3px 0 0 -25px;
+                                        border-radius: 100%;
+                                        border: 1px solid #CCC;
+                                        content: '';
+                                        display: block;
+                                    }
+                                }
+                                div{
+                                    font-size: 12px;
+                                    .time{
+                                        margin-top: 5px;
+                                        color: var(--muted-color);
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    @media screen and (min-width: 850px){
+        .body{
+            > div{
+                > section.code{
+                    display: flex;
+                    justify-content: space-between;
+                    text-align: start;
+                }
+            }
+        }
+    }
+    @media screen and (max-width: 650px){
+        .body{
+            > div{
+                > header{
+                    padding-left: 20px;
+                    padding-right: 20px;
+                    grid-gap: 15px;
+                    font-size: 12px;
+                }
+            }
+        }
+    }
+}

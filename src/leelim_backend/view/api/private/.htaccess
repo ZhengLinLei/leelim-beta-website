@@ -1,0 +1,5 @@
+RewriteEngine on
+
+
+# GET
+RewriteRule ^([a-zA-Z\_]*)/([a-zA-Z\_]*)/?$ ?template=$1&page=$2 [QSA,L] 
