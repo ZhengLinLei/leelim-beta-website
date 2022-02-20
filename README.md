@@ -6,7 +6,7 @@
 
 <br>
 <p align="center">
-    <img src="./docs/leelim.png" alt="Logo" />
+    <img src="./docs/leelim144.png" alt="Logo" />
 </p>
 
 <br>
@@ -189,3 +189,9 @@ Please read the `CONTRIBUTING.md` details steps to make pull request. Or contact
 ## <a name="bugs"></a> 5. Bugs
 
 Read `common_bugs.txt` or open an [issue](https://github.com/ZhengLinLei/leelim-beta-website/issues)
+
+### Love this repo? Give us a star ⭐
+
+<a href="./">
+  <img src="https://img.shields.io/badge/Kronus.py-Rate-blue">
+</a>
