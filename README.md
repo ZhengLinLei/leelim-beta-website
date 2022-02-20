@@ -48,8 +48,8 @@ This project is based in e-commerce with LAMP system.
 
 This project has got two parts:
 
-    1. Customer part
-    2. Admin part
+1. Customer part
+2. Admin part
 
 **Customer part**: This is the part where the client are going to visit, the frontend. `./src/leelim`
 
@@ -59,8 +59,8 @@ This project has got two parts:
 
 The helper used to pay are:
 
-    1. [PayPal](https://paypal.com)
-    2. [Stripe](https://stripe.com) (Credit and Debit card Online TPV)
+1. [PayPal](https://paypal.com)
+2. [Stripe](https://stripe.com) (Credit and Debit card Online TPV)
 
 
 ----------------
