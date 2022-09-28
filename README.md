@@ -157,16 +157,16 @@ Open your code editor, and open the file `./src/leelim/view/api/private/import/m
 //INCLUDE STRIPE API SDK
 require '../../../model/stripe-php/init.php';
 //PRIVATE KEY
-$key = 'sk_test_51Ihgw6J9HHZbmVICIuwN4usvDGSSNbxx9GPkaygf0ubDdGFrWPJOAy69awPaNz5en3bdBZnyjQa3MEHfqOhBHVp600bp1L****'; // ! PUT YOUR STRPE PRIVATE KEY
+$key = 'sk_test_51Ihgw6J9HHZbmVIwN4usvDGSSNbxx9GPkaygf0ubDAy69awPaNz5en3bdBZnyjQa3MEHfqOhBHVp600bp1L****'; // ! PUT YOUR STRPE PRIVATE KEY
 //DEFINE
 $stripe = new \Stripe\StripeClient($key);
 ```
 
 And in the line [99] the same for PayPal.
 ```PHP
-$key_id = 'AWiyKSXaWWWBVzIxwzpRiYERzrxf7VjtQ9lDzojx9Qr1nA3ff3g4LjgwPDYCQ2uJGg2W4ci08649****'; // ! YOUR PAYPAL ID KEY
+$key_id = 'AWiyKSXaWWWBVzIxwzERzrxf7VjtQ9lDzojx9Qr1nALjgwPDYCQ2uJGg2W4ci08649****'; // ! YOUR PAYPAL ID KEY
 //PRIVATE KEY
-$key = 'EPbI_vnbeCedt41gb-C20euY6mbi7v3BvAQGeF2CoXTH3i0Z-mKse-nIk9kxrA_urpnrACUaqeKb****'; // ! YOUR PAYPAL PRIVATE KEY
+$key = 'EPbI_vnbeCedt41gb-euY6mbi7v3BvAQGeF2CoXTH3i0Z-9kxrA_urpnrACUaqeKb****'; // ! YOUR PAYPAL PRIVATE KEY
 ```
 
 
