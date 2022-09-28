@@ -23,8 +23,13 @@ To personalizate domains in XAMPP you only need to acces to the "apache\conf\ext
 
 Change "C:\xampp\htdocs\zll\leelim" and "C:\xampp\htdocs\zll\leelim_backend" to the rute where you have the project.
 
+Then open "httpd.conf" and include the vhost inside the System
+
+# Virtual hosts
+Include etc/extra/httpd-vhosts.conf
 
 Now go to "C:/Windows/System32/drivers/etc" and find the file "hosts" and add this two line of code:
+Or in Mac or Linux in "/etc/" "hosts" file
 
     127.0.0.1	leelim.test
     127.0.0.1	backend.leelim.test

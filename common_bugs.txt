@@ -3,3 +3,39 @@
     -------- How to fix it?
     
     Check if the connection has been created with utf8_general_ci encoding
+
+
+
+2. Acces forbidden after adding vhost
+
+    --------- Open the vhost file "httpd-vhost.conf"
+
+    And paste the same command changed
+
+    <VirtualHost *:80>
+        DocumentRoot "C:\xampp\htdocs"
+        ServerName localhost
+        <Directory "C:\xampp\htdocs">
+            Options All
+            AllowOverride All
+            Require all granted
+        </Directory>
+    </VirtualHost>
+    <VirtualHost leelim.test:80>
+        DocumentRoot "C:\xampp\htdocs\zll\leelim"
+        ServerName leelim.test
+        <Directory "C:\xampp\htdocs\zll\leelim">
+            Options All
+            AllowOverride All
+            Require all granted
+        </Directory>
+    </VirtualHost>
+    <VirtualHost backend.leelim.test:80>
+        DocumentRoot "C:\xampp\htdocs\zll\leelim_backend"
+        ServerName backend.leelim.test
+        <Directory "C:\xampp\htdocs\zll\leelim_backend">
+            Options All
+            AllowOverride All
+            Require all granted
+        </Directory>
+    </VirtualHost>
