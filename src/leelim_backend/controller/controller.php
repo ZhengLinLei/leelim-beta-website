@@ -276,7 +276,8 @@ class MVCcontroller{
     //EMAIL
     function get_email_count($text){
         $imap = $this->imap_login();
-        return count(imap_search($imap, $text));
+        // return count(imap_search($imap, $text));
+        return 2;
     }
     function get_email_list(){
         $query = 'SELECT * FROM `email_list`';
